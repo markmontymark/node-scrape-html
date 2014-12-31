@@ -1,0 +1,8 @@
+'use strict';
+
+var argv = require('yargs').argv;
+var scrape = require('./lib/');
+
+var url = argv._[0];
+var selector = argv._[1];
+scrape(url,selector);
