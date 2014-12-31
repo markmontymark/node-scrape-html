@@ -32,4 +32,24 @@ scrape('http://github.com/markmontymark\?tab\=repositories','.repo-list-name a')
 // dotfiles
 // type_dispatch
 // ...
+
+// Or pass in your own callback
+var scrape = require('scrape');
+var selector = '.repo-list-name a';
+var repos = [];
+scrape(
+  'http://github.com/markmontymark\?tab\=repositories',
+  selector,
+  function(err,window){
+    window.$(selector).each(function(i,ele){
+      repos.push( ele.innerHTML.trim());
+    });
+    console.log( repos );
+  }
+);
+// eventually, repos will have same items:
+// [ 'node-scrape-html',
+//   'dotfiles',
+//   'type_dispatch',
+//   ... ]
 ```
