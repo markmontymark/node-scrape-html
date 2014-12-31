@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "scrape HTML from url + selector, using jsdom and jquery",
   "main": "index.js",
+  "bin":{"scrape":"bin/cmd.js"},
   "scripts": {
     "test": "mocha"
   },
