@@ -1,6 +1,6 @@
 {
   "name": "scrape-html",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "scrape HTML from url + selector, using jsdom and jquery",
   "main": "index.js",
   "bin": {
