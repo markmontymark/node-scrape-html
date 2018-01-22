@@ -7,7 +7,7 @@ var scrape = require('../lib/');
 
 describe('my github repos',function (){
   it('can list my repos',function(done){
-    var selector = '.repo-list-name a';
+    var selector = '#user-repositories-list a';
     var repos = [];
     scrape('http://github.com/markmontymark?tab=repositories',selector,function(err,window){
       window.$(selector).each(function(i,ele){
