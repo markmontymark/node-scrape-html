@@ -10,9 +10,13 @@ describe('my github repos',function (){
     var selector = '#user-repositories-list a';
     var repos = [];
     scrape('http://github.com/markmontymark?tab=repositories',selector,function(err,window){
-      window.$(selector).each(function(i,ele){
-        repos.push(ele.innerHTML.trim());
-      });
+      var elements = window.document.querySelectorAll(selector);
+			if(elements){
+				for(var i=0;i<elements.length;i++){
+					var ele = elements[i];
+					repos.push(ele.innerHTML.trim());
+				}
+      }
       console.log(repos);
       assert(repos.length > 0,'Has non-zero length');
 
